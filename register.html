@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Register - Cakes2u4u</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- Load Cognito SDK -->
+  <script src="https://cdn.jsdelivr.net/npm/amazon-cognito-identity-js@6.0.3/dist/amazon-cognito-identity.min.js"></script>
+  <!-- Load your config with pool info -->
+  <script src="amplify-config.js"></script>
+</head>
+<body>
+  <div class="form-container">
+    <h2>Create an Account</h2>
+    <form id="registerForm">
+      <input type="email" id="email" placeholder="Email" required><br>
+      <input type="password" id="password" placeholder="Password" required><br>
+      <button type="submit">Register</button>
+    </form>
+  </div>
+
+  <!-- Load custom registration logic -->
+  <script src="scripts/register.js"></script>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Verify Your Email - Cakes2u4u</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- Load Cognito SDK and your config -->
+  <script src="https://cdn.jsdelivr.net/npm/amazon-cognito-identity-js@6.0.3/dist/amazon-cognito-identity.min.js"></script>
+  <script src="amplify-config.js"></script>
+</head>
+<body>
+  <div class="form-container">
+    <h2>Verify Your Email</h2>
+    <p>Please check your inbox for a verification code.</p>
+    <form id="verifyForm">
+      <input type="email" id="email" placeholder="Email" required><br>
+      <input type="text" id="code" placeholder="Verification Code" required><br>
+      <button type="submit">Verify</button>
+    </form>
+  </div>
+
+  <!-- Load verification logic -->
+  <script src="scripts/verify.js"></script>
+</body>
+</html>

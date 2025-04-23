@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Invoice - Cakes2u4u</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+  <div class="invoice-container">
+    <h1>Thank you for your order! 🧁</h1>
+
+    <!-- ✅ Order confirmation -->
+    <p>We’ve received your order and will start baking right away!</p>
+
+    <!-- 🧾 Order summary box -->
+    <div id="invoiceSummary"></div>
+
+    <!-- ✉️ Email note -->
+    <p style="margin-top: 20px;">
+      A copy of your invoice will be sent to your email address shortly. 💌
+    </p>
+  </div>
+
+  <script>
+    // 🧾 If you want to carry over submitted order info:
+    // You could pass it via query string, sessionStorage, or fetch from backend
+
+    // For this basic version, simulate with hardcoded example
+    const sampleInvoice = {
+      customerName: "Sample Customer",
+      deliveryAddress: "123 Cake Street",
+      cakes: {
+        "Strawberry Delight": 2,
+        "Chocolate Dream": 1
+      },
+      total: 60
+    };
+
+    // 🧾 Render invoice summary
+    const invoiceDiv = document.getElementById("invoiceSummary");
+
+    let html = `<h2>Invoice Summary</h2>`;
+    html += `<p><strong>Name:</strong> ${sampleInvoice.customerName}</p>`;
+    html += `<p><strong>Delivery Address:</strong> ${sampleInvoice.deliveryAddress}</p>`;
+    html += `<ul>`;
+    for (const cake in sampleInvoice.cakes) {
+      html += `<li>${cake} x ${sampleInvoice.cakes[cake]}</li>`;
+    }
+    html += `</ul>`;
+    html += `<p><strong>Total:</strong> $${sampleInvoice.total}</p>`;
+
+    invoiceDiv.innerHTML = html;
+  </script>
+</body>
+</html>

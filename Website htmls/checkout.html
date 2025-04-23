@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Checkout - Cakes2u4u</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+  <div class="checkout-container">
+    <h1>Checkout</h1>
+
+    <!-- 🧁 Order summary section -->
+    <div id="orderSummary"></div>
+
+    <!-- 🧍 User input form -->
+    <h2>Your Info</h2>
+    <form id="checkoutForm">
+      <input type="text" id="name" placeholder="Full Name" required><br>
+      <input type="text" id="address" placeholder="Delivery Address" required><br>
+      <!-- 📝 (Optional) Mock credit card input -->
+      <input type="text" id="card" placeholder="Credit Card (Mock)" required><br>
+      <button type="submit">Place Order</button>
+    </form>
+  </div>
+
+  <script>
+    const CAKE_PRICE = 20; // 💰 Each cake is $20
+
+    // 🧁 Get cake order from local storage
+    const order = JSON.parse(localStorage.getItem('cakeOrder')) || [];
+
+    // 📦 Group cakes and count quantities
+    const counts = {};
+    order.forEach(cake => {
+      counts[cake] = (counts[cake] || 0) + 1;
+    });
+
+    // 💵 Calculate subtotal
+    const subtotal = order.length * CAKE_PRICE;
+
+    // 🧾 Render the order summary
+    const summaryDiv = document.getElementById('orderSummary');
+    if (order.length === 0) {
+      summaryDiv.innerHTML = "<p>You have no cakes in your order.</p>";
+    } else {
+      let html = "<h2>Your Order:</h2><ul>";
+      for (const cake in counts) {
+        html += `<li>${cake} x ${counts[cake]}</li>`;
+      }
+      html += `</ul><p><strong>Subtotal:</strong> $${subtotal}</p>`;
+      summaryDiv.innerHTML = html;
+    }
+
+    // ✅ Handle form submission
+    document.getElementById("checkoutForm").addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      const name = document.getElementById("name").value;
+      const address = document.getElementById("address").value;
+      const card = document.getElementById("card").value; // Mock value
+
+      // 📨 Build the order object
+      const orderDetails = {
+        customerName: name,
+        deliveryAddress: address,
+        cakes: counts,
+        total: subtotal
+      };
+      fetch("https://0mrdsmdk2k.execute-api.us-east-1.amazonaws.com/submitOrder", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(orderDetails)
+    })
+    .then(response => response.json())
+    .then(data => {
+        console.log("Order placed:", data);
+        alert("Thank you! Your order has been placed. 🎉");
+
+        localStorage.removeItem('cakeOrder');
+        window.location.href = "invoice.html";
+    })
+    .catch(error => {
+        console.error("Error placing order:", error);
+        alert("Something went wrong! Please try again.");
+    });
+    
+      // Placeholder for Lambda POST request (to be implemented later)
+      //console.log("Submitting order to backend:", orderDetails);
+
+      //alert("Thank you! Your order has been placed.");
+
+      // Clear localStorage so their cart is empty
+      //localStorage.removeItem('cakeOrder');
+
+      // Redirect to confirmation/invoice page (you'll build this next!)
+      //window.location.href = "invoice.html";
+    });
+  </script>
+</body>
+</html>
