@@ -5,8 +5,7 @@ const poolData = {
   };
   
   // Create a Cognito User Pool object using the info above
-  const userPool = new window.AmazonCognitoIdentity.CognitoUserPool(poolData);
-
+  const userPool = new AmazonCognitoIdentity.CognitoUserPool(poolData);
   
   // Attach a listener to the form when it's submitted
   document.getElementById("registerForm").addEventListener("submit", function (e) {
@@ -17,7 +16,7 @@ const poolData = {
   
     // Create an attribute list for Cognito. At minimum, include email.
     const attributeList = [
-        new window.AmazonCognitoIdentity.CognitoUserAttribute({
+      new AmazonCognitoIdentity.CognitoUserAttribute({
         Name: "email",
         Value: email
       })
