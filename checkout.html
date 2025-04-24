@@ -65,13 +65,14 @@
         cakes: counts,
         total: subtotal
       };
-      fetch("https://0mrdsmdk2k.execute-api.us-east-1.amazonaws.com/submitOrder", {
+      fetch(`${window._config.api.invokeUrl}/submitOrder`, {
         method: "POST",
         headers: {
-            "Content-Type": "application/json"
+          "Content-Type": "application/json"
         },
         body: JSON.stringify(orderDetails)
-    })
+      })
+
     .then(response => response.json())
     .then(data => {
         console.log("Order placed:", data);
