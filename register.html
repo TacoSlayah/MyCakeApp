@@ -10,7 +10,7 @@
   <!-- ✅ Load Cognito SDK core and wrapper (order matters!) -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/amazon-cognito-identity-js/6.0.3/aws-cognito-sdk.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/amazon-cognito-identity-js/6.0.3/amazon-cognito-identity.min.js"></script>
-  
+
   <!-- Config with pool info -->
   <script src="amplify-config.js"></script>
 </head>
@@ -23,6 +23,11 @@
       <button type="submit">Register</button>
     </form>
   </div>
+
+   <!-- Test if Cognito is loaded -->
+   <script>
+    console.log("Does Cognito exist?", typeof AmazonCognitoIdentity);
+  </script>
 
   <!-- Custom JS script -->
   <script src="scripts/register.js"></script>
