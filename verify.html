@@ -1,10 +1,14 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <meta charset="utf-8">
   <title>Verify Your Email - Cakes2u4u</title>
   <link rel="stylesheet" href="style.css">
-  <!-- Load Cognito SDK and your config -->
-  <script src="https://cdn.jsdelivr.net/npm/amazon-cognito-identity-js@6.0.3/dist/amazon-cognito-identity.min.js"></script>
+
+  <!-- Dependencies -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/amazon-cognito-identity-js/6.0.3/aws-cognito-sdk.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/amazon-cognito-identity-js/6.0.3/amazon-cognito-identity.min.js"></script>
   <script src="amplify-config.js"></script>
 </head>
 <body>
@@ -12,13 +16,12 @@
     <h2>Verify Your Email</h2>
     <p>Please check your inbox for a verification code.</p>
     <form id="verifyForm">
-      <input type="email" id="email" placeholder="Email" required><br>
-      <input type="text" id="code" placeholder="Verification Code" required><br>
+      <input type="email" id="emailInputVerify" placeholder="Email" required><br>
+      <input type="text" id="codeInputVerify" placeholder="Verification Code" required><br>
       <button type="submit">Verify</button>
     </form>
   </div>
 
-  <!-- Load verification logic -->
-  <script src="scripts/verify.js"></script>
+<script src="scripts/verify.js"></script>
 </body>
 </html>
