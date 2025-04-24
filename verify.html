@@ -5,11 +5,15 @@
   <title>Verify Your Email - Cakes2u4u</title>
   <link rel="stylesheet" href="style.css">
 
-  <!-- Dependencies -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/amazon-cognito-identity-js/6.0.3/aws-cognito-sdk.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/amazon-cognito-identity-js/6.0.3/amazon-cognito-identity.min.js"></script>
-  <script src="amplify-config.js"></script>
+<!-- ✅ Load jQuery first -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+
+<!-- ✅ Load AWS SDK + Cognito SDKs -->
+<script src="lib/aws-cognito-sdk.min.js"></script>
+<script src="lib/amazon-cognito-identity.min.js"></script>
+
+<!-- ✅ Your config -->
+<script src="amplify-config.js"></script>
 </head>
 <body>
   <div class="form-container">
