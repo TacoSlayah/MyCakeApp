@@ -27,7 +27,7 @@ const poolData = {
       onSuccess: function (result) {
         alert("Login successful!");
         localStorage.setItem("idToken", result.getIdToken().getJwtToken());
-        window.location.href = "home.html"; // Later you'll create this
+        window.location.href = "order.html"; // Later you'll create this
       },
       onFailure: function (err) {
         alert(err.message || JSON.stringify(err));
