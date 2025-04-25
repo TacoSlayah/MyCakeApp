@@ -101,6 +101,7 @@
       //localStorage.removeItem('cakeOrder');
 
       // Redirect to confirmation/invoice page (you'll build this next!)
+      localStorage.setItem("lastOrder", JSON.stringify(orderDetails));
       window.location.href = "invoice.html";
     });
   </script>
