@@ -5,7 +5,7 @@ window._config = {
       region: 'us-east-1'                             // ✅ Your region
     },
     api: {
-      invokeUrl: 'https://0mrdsmdk2k.execute-api.us-east-1.amazonaws.com' // ✅ Your real API Gateway base URL (no /submitOrder)
+      invokeUrl: 'https://0mrdsmdk2k.execute-api.us-east-1.amazonaws.com' // ✅ Your real API Gateway base URL
     }
   };
   

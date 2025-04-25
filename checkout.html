@@ -21,6 +21,8 @@
       <button type="submit">Place Order</button>
     </form>
   </div>
+  
+  <script src="amplify-config.js"></script>
 
   <script>
     const CAKE_PRICE = 20; // 💰 Each cake is $20
@@ -65,6 +67,10 @@
         cakes: counts,
         total: subtotal
       };
+
+      // ✅ Log to verify config is loaded
+      console.log("Config loaded:", window._config);
+
       fetch(`${window._config.api.invokeUrl}/submitOrder`, {
         method: "POST",
         headers: {
@@ -95,7 +101,7 @@
       //localStorage.removeItem('cakeOrder');
 
       // Redirect to confirmation/invoice page (you'll build this next!)
-      //window.location.href = "invoice.html";
+      window.location.href = "invoice.html";
     });
   </script>
 </body>
