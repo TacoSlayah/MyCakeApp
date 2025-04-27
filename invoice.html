@@ -6,29 +6,29 @@
 </head>
 <body>
   <div class="invoice-container">
-    <h1>Thank you for your order! 🧁</h1>
+    <h1>Thank you for your order!</h1>
 
-    <!-- ✅ Order confirmation -->
+    <!-- Order confirmation -->
     <p>We’ve received your order and will start baking right away!</p>
 
-    <!-- 🧾 Order summary box -->
+    <!-- Order summary box -->
     <div id="invoiceSummary"></div>
 
-    <!-- ✉️ Email note -->
+    <!-- Email note -->
     <p style="margin-top: 20px;">
-      A copy of your invoice will be sent to your email address shortly. 💌
+      A copy of your invoice will be sent to your email address shortly. 
     </p>
   </div>
 
   <script>
-    // ✅ Get the actual order info stored in localStorage from checkout.html
+    // Get the order info stored in localStorage from checkout.html
     const lastOrder = JSON.parse(localStorage.getItem("lastOrder"));
   
-    // 🚨 If no order is found (user skipped steps), show a message
+    // If no order is found, show error message
     if (!lastOrder) {
       document.getElementById("invoiceSummary").innerHTML = "<p>No order data found.</p>";
     } else {
-      // 🧾 Render invoice summary using real order data
+      // Invoice summary 
       const invoiceDiv = document.getElementById("invoiceSummary");
   
       let html = `<h2>Invoice Summary</h2>`;

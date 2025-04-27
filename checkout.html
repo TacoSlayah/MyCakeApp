@@ -8,16 +8,17 @@
   <div class="checkout-container">
     <h1>Checkout</h1>
 
-    <!-- 🧁 Order summary section -->
+    <!-- Order summary section -->
     <div id="orderSummary"></div>
 
-    <!-- 🧍 User input form -->
+    <!-- User infromation (name, address, card info) form -->
     <h2>Your Info</h2>
     <form id="checkoutForm">
       <input type="text" id="name" placeholder="Full Name" required><br>
       <input type="text" id="address" placeholder="Delivery Address" required><br>
-      <!-- 📝 (Optional) Mock credit card input -->
-      <input type="text" id="card" placeholder="Credit Card (Mock)" required><br>
+      
+      <!-- Mock credit card input -->
+      <input type="text" id="card" placeholder="Credit Card (Mock)" maxlength="19" pattern="[0-9\s]{13,19}" required><br>
       <button type="submit">Place Order</button>
     </form>
   </div>
@@ -25,21 +26,21 @@
   <script src="amplify-config.js"></script>
 
   <script>
-    const CAKE_PRICE = 20; // 💰 Each cake is $20
+    const CAKE_PRICE = 20; // Each cake is $20
 
-    // 🧁 Get cake order from local storage
+    // Get cake order from local storage
     const order = JSON.parse(localStorage.getItem('cakeOrder')) || [];
 
-    // 📦 Group cakes and count quantities
+    // Group cakes and count quantities
     const counts = {};
     order.forEach(cake => {
-      counts[cake] = (counts[cake] || 0) + 1;
+      counts[cake] = (counts[cake] || 0) + 1; // math stuffs
     });
 
-    // 💵 Calculate subtotal
+    // Subtotal calculation
     const subtotal = order.length * CAKE_PRICE;
 
-    // 🧾 Render the order summary
+    // Order summary
     const summaryDiv = document.getElementById('orderSummary');
     if (order.length === 0) {
       summaryDiv.innerHTML = "<p>You have no cakes in your order.</p>";
@@ -52,7 +53,14 @@
       summaryDiv.innerHTML = html;
     }
 
-    // ✅ Handle form submission
+    // Formats credit card line (updated)
+    document.getElementById('card').addEventListener('input', function (e) {
+      let value = e.target.value.replace(/\D/g, '');      // Only numbers
+      value = value.match(/.{1,4}/g)?.join(' ') || '';     // Add space every 4 digits
+      e.target.value = value;                             // Update field
+    });
+
+    // Handles form submission
     document.getElementById("checkoutForm").addEventListener("submit", function (e) {
       e.preventDefault();
 
@@ -60,7 +68,7 @@
       const address = document.getElementById("address").value;
       const card = document.getElementById("card").value; // Mock value
 
-      // 📨 Build the order object
+      // orderDetails object
       const orderDetails = {
         customerName: name,
         deliveryAddress: address,
@@ -68,7 +76,7 @@
         total: subtotal
       };
 
-      // ✅ Log to verify config is loaded
+      // Verifies if config is loaded
       console.log("Config loaded:", window._config);
 
       fetch(`${window._config.api.invokeUrl}/submitOrder`, {
@@ -100,9 +108,8 @@
       // Clear localStorage so their cart is empty
       //localStorage.removeItem('cakeOrder');
 
-      // Redirect to confirmation/invoice page (you'll build this next!)
       localStorage.setItem("lastOrder", JSON.stringify(orderDetails));
-      window.location.href = "invoice.html";
+      window.location.href = "invoice.html"; // go to invoice.html (last page)
     });
   </script>
 </body>
