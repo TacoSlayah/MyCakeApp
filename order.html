@@ -9,42 +9,54 @@
     <h1>Pick Your Cake! </h1>
     <div class="cake-list">
 
-      <!-- Raspberry Snowflake Cake -->
+      <!-- Raspberry Snowflake Cake image, price, decription, add order-->
       <div class="cake-card">
-        <img src="../Website Images/Cake images/Raspberry Snowflake Cake.jpg" alt="Raspberry Snowflake" width="200">
+        <img src="../Website Images/Cake images/Raspberry Snowflake Cake.jpg" alt="Raspberry Snowflake" width="200"> <!-- Picture -->
         <h2>Raspberry Snowflake</h2>
-        <p>Fluffy strawberry cake with vanilla frosting and berry drizzle 🍓</p>
-        <button onclick="addToOrder('Raspberry Snowflake')">Add to Order</button>
+        <p><strong>$20.00</strong></p> 
+        <p> Want something simple yet sure to satisfy your taste buds? Have this raspberry flavored cake with white chocolate frosting 
+          on the outside coupled with raspberries and powdered sugar on top</p>
+        <button onclick="addToOrder('Raspberry Snowflake')">Add to Order</button> <!-- Add cake to order-->
+        <p><strong>________</strong></p>
       </div>
 
-      <!-- Oatmeal Cream Pie Cake -->
+      <!-- Oatmeal Cream Pie Cake image, price, decription, add order -->
       <div class="cake-card">
         <img src="../Website Images/Cake images/Oatmeal Cream Pie Cake.jpg" alt="Oatmeal Cream Pie" width="200">
         <h2>Oatmeal Cream Pie</h2>
-        <p>Rich chocolate cake layered with ganache and fudge frosting 🍫</p>
+        <p><strong>$20.00</strong></p> 
+        <p>Inspired by Little Debbie's Oatmeal Cream Pie, it's now a cake! If you love the oatmeal cookie sandwich with delicious filling
+          you'll be sure to love this. The inside is brown sugar oatmeal bread and marshmallow cream filling with the outside being butter cream. 
+          You didn't think we'd leave out the pies did you? At the top of the cake we included the Oatmeal Cream Pie cookies! 
+        </p>
         <button onclick="addToOrder('Oatmeal Cream Pie')">Add to Order</button>
+        <p><strong>________</strong></p>
       </div>
 
-      <!-- Oreo Mania Cake -->
+      <!-- Oreo Mania Cake image, price, decription, add order -->
       <div class="cake-card">
         <img src="../Website Images/Cake images/Oreo Mania Cake.jpg" alt="Oreo Mania" width="200">
         <h2>Oreo Mania</h2>
-        <p>Light lemon sponge cake with cream cheese frosting 🍋</p>
+        <p><strong>$20.00</strong></p>
+        <p>For our Oreo and chocolate lovers, this cake is for you! Pretty much every step in making this cake includes Oreos.
+          The bread is chocolate flavored with Oreo cookie crumbs. The filling and frosting are cookies and cream flavored, 
+        while the top has chocolate drizzle. Finally, at the top sits Hershey's cookies and cream chocolate with Oreo cookies! </p>
         <button onclick="addToOrder('Oreo Mania')">Add to Order</button>
+        <p><strong>________</strong></p>
       </div>
 
     </div>
 
-    <!-- Go to checkout -->
+    <!-- Go to checkout.html -->
     <a href="checkout.html"><button style="margin-top: 20px;">Proceed to Checkout</button></a> <!-- edited -->
   </div>
 
   <script>
-    // Store selected cakes in browser's local storage
+    // Store cakes in local storage
     function addToOrder(cakeName) {
       let order = JSON.parse(localStorage.getItem('cakeOrder')) || [];
       order.push(cakeName);
-      localStorage.setItem('cakeOrder', JSON.stringify(order));
+      localStorage.setItem('cakeOrder', JSON.stringify(order));// Saves here
       alert(cakeName + ' added to your order!');
     }
   </script>

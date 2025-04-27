@@ -7,28 +7,28 @@
   <!-- Load jQuery -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
 
-  <!-- AWS SDK core -->
+  <!-- AWS SDK core (REQUIRED before Cognito) -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/aws-sdk/2.1480.0/aws-sdk.min.js"></script>
 
-  <!-- ✅ Load local Cognito SDKs (order matters) -->
+  <!-- Load lib folder files in order -->
   <script src="lib/amazon-cognito.min.js"></script>
   <script src="lib/amazon-cognito-identity.min.js"></script>
 
-  <!-- Your pool config -->
+  <!-- User pool config -->
   <script src="amplify-config.js"></script>
 
 </head>
 <body>
   <div class="form-container">
     <h2>Login to Cakes2u4u</h2>
-    <form id="loginForm">
+    <form id="loginForm"> <!-- User logs in with email and password -->
       <input type="email" id="email" placeholder="Email" required>
       <input type="password" id="password" placeholder="Password" required>
       <button type="submit">Login</button>
     </form>
   </div>
 
-<!-- Then load the login script that uses those settings -->
+<!-- Go to login.js with email and password -->
 <script src="scripts/login.js"></script>
 </body>
 </html>
