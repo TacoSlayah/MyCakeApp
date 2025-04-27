@@ -10,22 +10,21 @@
 <!-- AWS SDK core (REQUIRED before Cognito) -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/aws-sdk/2.1480.0/aws-sdk.min.js"></script>
 
-
 <!-- Load lib folder files -->
 <script src="lib/amazon-cognito.min.js"></script>
 <script src="lib/amazon-cognito-identity.min.js"></script>
 
-<!-- Your pool config -->
+<!-- User pool config -->
 <script src="amplify-config.js"></script>
 
 </head>
 <body>
   <div class="form-container">
     <h2>Create an Account</h2>
-    <form id="registerForm">
-      <input type="email" id="email" placeholder="Email" required><br>
+    <form id="registerForm"> <!-- Starts account form for user to type info -->
+      <input type="email" id="email" placeholder="Email" required><br> <!-- User types info -->
       <input type="password" id="password" placeholder="Password" required><br>
-      <button type="submit">Register</button>
+      <button type="submit">Register</button> <!-- Takes to verify.html page -->
     </form>
   </div>
 
@@ -35,6 +34,6 @@
   </script> -->
 
   <!-- Calls register.js in scripts folder -->
-  <script src="scripts/register.js"></script>
+  <script src="scripts/register.js"></script> <!-- Calls to register.js -->
 </body>
 </html>
