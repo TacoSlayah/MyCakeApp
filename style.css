@@ -9,13 +9,13 @@
 
   body {
     background-image: url('Website Images/Cake images/Cake Index Wallpaper.jpg');
-    background-size: cover;          /* 📏 Stretch nicely */
-    background-position: center;     /* 🎯 Keep it centered */
-    background-repeat: no-repeat;    /* 🚫 No tiling */
-    background-attachment: fixed;    /* 📌 Stay still when scrolling */
-    margin: 0;                       /* 🧹 Remove default white space */
+    background-size: cover;          
+    background-position: center;     
+    background-repeat: no-repeat;    
+    background-attachment: fixed;    
+    margin: 0;                       
     padding: 0;
-    min-height: 100vh;               /* 🔥 Ensure full screen */
+    min-height: 100vh;              
   }
   
   .home-container {
@@ -58,17 +58,17 @@
 
 .cake-list {
   display: flex;
-  flex-wrap: wrap; /* allow them to wrap on smaller screens */
-  justify-content: center; /* center the cakes horizontally */
-  gap: 40px; /* nice space between cakes */
+  flex-wrap: wrap; 
+  justify-content: center; 
+  gap: 40px; 
 }
 
 .cake-card {
-  width: 300px;          /* make all cards the same width */
-  background-color: rgb(255, 244, 190); /* optional: make cards pop if you want */
+  width: 300px;          
+  background-color: rgb(255, 244, 190);
   padding: 20px;
   border-radius: 12px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1); /* optional: soft shadow */
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1); 
   text-align: center;
 }
 
