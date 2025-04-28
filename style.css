@@ -8,7 +8,7 @@
   } */
 
   body {
-    background-image: urlurl('../Website Images/Cake images/Cake Index Wallpaper.jpg'); /* ✅ Replace with your correct path */
+    background-image: url('Website Images/Cake images/Cake Index Wallpaper.jpg');
     background-size: cover;          /* 📏 Stretch nicely */
     background-position: center;     /* 🎯 Keep it centered */
     background-repeat: no-repeat;    /* 🚫 No tiling */
@@ -49,6 +49,13 @@
   button:hover {
     background-color: #c4154f;
   }
+
+  .form-container,
+  .checkout-container,
+  .invoice-container {
+  text-align: center;
+}
+
 
 
   
