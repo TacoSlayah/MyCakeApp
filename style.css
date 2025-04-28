@@ -1,14 +1,26 @@
-body {
+/* body {
     font-family: 'Segoe UI', sans-serif;
     background-color: #b3ffea;
     color: #333;
     margin: 0;
     padding: 0;
     text-align: center;
+  } */
+
+  body {
+    background-image: urlurl('../Website Images/Cake images/Cake Index Wallpaper.jpg'); /* ✅ Replace with your correct path */
+    background-size: cover;          /* 📏 Stretch nicely */
+    background-position: center;     /* 🎯 Keep it centered */
+    background-repeat: no-repeat;    /* 🚫 No tiling */
+    background-attachment: fixed;    /* 📌 Stay still when scrolling */
+    margin: 0;                       /* 🧹 Remove default white space */
+    padding: 0;
+    min-height: 100vh;               /* 🔥 Ensure full screen */
   }
   
   .home-container {
     padding: 40px;
+    text-align: center;
   }
   
   h1 {

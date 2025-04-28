@@ -90,7 +90,7 @@
     .then(response => response.json())
     .then(data => {
         console.log("Order placed:", data);
-        alert("Thank you! Your order has been placed. 🎉");
+        alert("Thank you! Your order has been placed.");
 
         localStorage.removeItem('cakeOrder');
         window.location.href = "invoice.html";
