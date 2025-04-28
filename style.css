@@ -56,6 +56,29 @@
   text-align: center;
 }
 
+.cake-list {
+  display: flex;
+  flex-wrap: wrap; /* allow them to wrap on smaller screens */
+  justify-content: center; /* center the cakes horizontally */
+  gap: 40px; /* nice space between cakes */
+}
+
+.cake-card {
+  width: 300px;          /* make all cards the same width */
+  background-color: rgb(255, 244, 190); /* optional: make cards pop if you want */
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1); /* optional: soft shadow */
+  text-align: center;
+}
+
+.order-container {
+  text-align: center;
+  padding: 40px;
+}
+
+
+
 
 
   
