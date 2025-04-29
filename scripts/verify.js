@@ -5,6 +5,7 @@ $(document).ready(function () {
     ClientId: window._config.cognito.userPoolClientId
   };
 
+  // poolData contains user pool and client IDs
   const userPool = new AmazonCognitoIdentity.CognitoUserPool(poolData);
 
   $('#verifyForm').submit(function (e) {

@@ -4,6 +4,7 @@ const poolData = {
     ClientId: window._config.cognito.userPoolClientId
   };
   
+  // poolData contains user pool and client IDs
   const userPool = new AmazonCognitoIdentity.CognitoUserPool(poolData);
   
   // Receive login info
