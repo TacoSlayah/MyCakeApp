@@ -18,6 +18,9 @@
     <p style="margin-top: 20px;">
       A copy of your invoice will be sent to your email address shortly. 
     </p>
+
+    <p>Thank you for using my website!</p>
+
   </div>
 
   <script>
@@ -43,6 +46,11 @@
   
       invoiceDiv.innerHTML = html;
     }
+
+    // Popup notifying user you didn't actually get an email T<T 
+    setTimeout(function() {
+      alert("Note: The invoice hasn't actually been emailed to you, but that's what it would look like if it did :D");
+    }, 1000); 
   </script>
 </body>
 </html>

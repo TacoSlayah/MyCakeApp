@@ -1,4 +1,4 @@
-/* body {
+/* body { no longer want this body
     font-family: 'Segoe UI', sans-serif;
     background-color: #b3ffea;
     color: #333;
@@ -7,6 +7,7 @@
     text-align: center;
   } */
 
+  /* What the user sees in the background */
   body {
     background-image: url('Website Images/Cake images/Cake Index Wallpaper.jpg');
     background-size: cover;          
@@ -18,23 +19,28 @@
     min-height: 100vh;              
   }
   
+  /* Content on the index page */
   .home-container {
     padding: 40px;
     text-align: center;
   }
   
+  /* What headings will look like */
   h1 {
     font-size: 2.5rem;
     color: #cc3366;
   }
   
+  /* paragraph style (anytime there's p, it will have this format) */
   p {
     font-size: 1.1rem;
     margin: 10px auto;
     max-width: 600px;
     line-height: 1.6;
+    font-family:sans-serif
   }
   
+  /* button style */
   button {
     background-color: #ff66a3;
     border: none;
@@ -46,16 +52,19 @@
     transition: background-color 0.3s ease;
   }
   
+  /* what happens when your mouse is hovering over the button */
   button:hover {
     background-color: #c4154f;
   }
 
+  /* For containers in register, checkout, and invoice htmls text is centered */
   .form-container,
   .checkout-container,
   .invoice-container {
   text-align: center;
 }
 
+/* Orgainzes cake pics */
 .cake-list {
   display: flex;
   flex-wrap: wrap; 
@@ -63,6 +72,7 @@
   gap: 40px; 
 }
 
+/* Format for the cards that contain the cake options */
 .cake-card {
   width: 300px;          
   background-color: rgb(255, 244, 190);
@@ -72,6 +82,7 @@
   text-align: center;
 }
 
+/* Order page container formatting */
 .order-container {
   text-align: center;
   padding: 40px;
